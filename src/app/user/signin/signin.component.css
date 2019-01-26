@@ -1,0 +1,30 @@
+.formContainer
+{
+
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+}
+
+label{
+    float: left;
+}
+form
+{
+    text-align: center;
+    display: block;
+    margin: auto;
+    border: 2px solid rgb(187, 113, 113);
+    padding: 40px;
+    background-color: rgb(142, 226, 149);
+    border-radius: 5px;
+}
+
+.submitButton
+{
+    margin-top: 50px;
+}
+

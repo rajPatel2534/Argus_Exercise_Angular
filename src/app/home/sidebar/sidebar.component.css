@@ -1,0 +1,13 @@
+ng-sidebar
+{
+    margin-top: 200px;
+
+    height: 200px;
+}
+
+ng-sidebar-container
+{
+    background-color: aqua;
+    max-width: 200px;
+    overflow-x: scroll;
+}
