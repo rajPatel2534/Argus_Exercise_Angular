@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'; 
+import {  ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,14 @@ import {HomeComponent} from './home/home.component';
 import {SidebarComponent} from './home/sidebar/sidebar.component';
 import { SidebarModule } from 'ng-sidebar';
 import { HeaderComponent } from './home/header/header.component';
+import {DashboardComponent} from './home/dashboard/dashboard.component'
+import {StudentListComponent} from './home/studentList/studentList.component'
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
+import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { DatePipe } from '@angular/common';
+import { AddStudentComponent } from './home/add-student/add-student.component'
 
 @NgModule({
   declarations: [
@@ -22,14 +32,22 @@ import { HeaderComponent } from './home/header/header.component';
     SignupComponent,
     SidebarComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    DashboardComponent,
+    StudentListComponent,
+    AddStudentComponent
   ],
   imports: [NgbModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
     SidebarModule.forRoot()
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

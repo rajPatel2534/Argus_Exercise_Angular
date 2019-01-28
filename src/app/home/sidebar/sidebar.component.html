@@ -1,10 +1,13 @@
 <ng-sidebar-container>
 
-  <ng-sidebar [(opened)]="_opened" (click)="togg()" style="margin-top : 500px;">
+  <ng-sidebar [(opened)]="_opened" >
     <p>Sidebar contents</p>
-    <li>Home</li>
-    <li>Students</li>
-  </ng-sidebar>
+    
+    <ul class="list-group">
+        <li *ngFor="let listItem of sideBarItems; let i = index" class="list-group-item " [class.active]="selectedIndex === i" 
+        (click)="setIndex(i)"  >{{listItem}}</li>
+      </ul>
+    </ng-sidebar>
 
 
 

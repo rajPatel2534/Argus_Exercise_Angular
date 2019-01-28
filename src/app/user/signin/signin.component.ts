@@ -14,20 +14,16 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
     if(this.auth.isLoggednIn())
     {
-      this.myRoute.navigate(["home"]);
+      this.myRoute.navigate(["/dashboard"]);
     }
   }
   
   login()
   {
       this.auth.sendToken('asdas');
-        this.myRoute.navigate(["home"]);
+        this.myRoute.navigate(["/dashboard"]);
       
   }
 
-  logOut()
-  {
-    this.auth.logout();
-    this.myRoute.navigate(["Login"]);
-  }
+
 }
