@@ -1,8 +1,10 @@
 <div class="headerBar">
   <div class="logoAndTitle">
     <img src="assets/img/logo.png" style="width:50px ; height: 50px;">
+   
   </div>
-  <div class="rightContent">
+  <h2>Project</h2>
+  <div class="rightContent" [routerLink]="['/','myaccount']">
   <i  class="fa fa-user fa-lg" ></i>
   <button type="button" class="btn btn-danger" (click)="logout()">Logout</button>
   </div>

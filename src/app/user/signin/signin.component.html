@@ -1,22 +1,62 @@
-<div class="formContainer">
+<div class="containner">
+  <div class="cont">
+    <h1>Sign In</h1>
+    <div class="formContainer">
 
-  <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+      <form [formGroup]="angForm" novalidob>
+        <div class="input-group mb-3 contain">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Username</span>
+          </div>
+          <div class="inerr">
+            <div class="form-group">
+              <input class="form-control" formControlName="username">
+            </div>
+            <div class="err">
+              <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="angForm.controls['username'].errors.required">
+                  *Required
+                </div>
+                <div *ngIf="angForm.controls['username'].errors.pattern">
+                  *Invalid Username
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <div class="submitButton">
-        <button type="button" (click)="login()" class="btn btn-primary">Submit</button>
+        <div class="input-group mb-3 contain">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Password</span>
+          </div>
+          <div class="inerr">
+            <div class="form-group">
+              <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="err">
+              <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)"
+                class="alert alert-danger">
+                <div *ngIf="angForm.controls['password'].errors.required">
+                  *Required
+                </div>
+                <div *ngIf="angForm.controls['password'].errors.pattern">
+                  *Invalid Password
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
+
+
+        <div class="btnContainer">
+          <button type="button" style="margin-left: 15px;" class="btn btn-success" [disabled]="!angForm.valid" (click)="checkLogin()">
+            Login
+          </button>
+        </div>
       </form>
-      </div>
+    </div>
+  </div>
+
+</div>

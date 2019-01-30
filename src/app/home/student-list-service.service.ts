@@ -28,14 +28,15 @@ export class StudentListService {
   }
 
 
-  delete(key : number)
+  delete(key : number) : boolean
   {   
     let index=this.getIndex(key);
     
     if(index>=0){
         this.studentList.splice(index,1);
+        return true;
       }
-      
+    return false;      
   }
 
   getIndex(key : number):number

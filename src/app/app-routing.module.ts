@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { StudentListComponent } from './home/studentList/studentList.component';
 import { AddStudentComponent } from './home/add-student/add-student.component';
+import { MyAccountComponent } from './home/my-account/my-account.component';
+
 
 const routes: Routes = [
   { path: '', component: SigninComponent, pathMatch: 'full' , canActivate: 
@@ -36,6 +38,10 @@ const routes: Routes = [
     {
       path:'addstudent',
       component:AddStudentComponent
+    },
+    {
+      path:'myaccount',
+      component:MyAccountComponent
     }
   ]}
   

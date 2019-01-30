@@ -22,7 +22,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { DatePipe } from '@angular/common';
-import { AddStudentComponent } from './home/add-student/add-student.component'
+import { AddStudentComponent } from './home/add-student/add-student.component';
+import { ToastrModule } from 'ng6-toastr-notifications';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyAccountComponent } from './home/my-account/my-account.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,8 @@ import { AddStudentComponent } from './home/add-student/add-student.component'
     HeaderComponent,
     DashboardComponent,
     StudentListComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    MyAccountComponent
   ],
   imports: [NgbModule,
     BrowserModule,
@@ -45,7 +50,10 @@ import { AddStudentComponent } from './home/add-student/add-student.component'
     Ng2OrderModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    SidebarModule.forRoot()
+    SidebarModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

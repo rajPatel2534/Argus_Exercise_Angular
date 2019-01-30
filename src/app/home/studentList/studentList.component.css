@@ -3,7 +3,9 @@ h1
     color: rgb(24, 167, 192);
     
     text-align: center;
-    margin-top: 15px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    padding: 0px;
     
 
  }
@@ -152,7 +154,7 @@ padding-top: -10px;
 .searchBar
 {
     float: left;
-   width: 80%;
+   width: 100%;
    flex-grow: 1;
 }
 

@@ -3,6 +3,8 @@ import { ValidatorFn, AbstractControl, ValidationErrors, Validators, FormBuilder
 import { DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { StudentListService } from '../student-list-service.service';
+import { ToastrManager } from 'ng6-toastr-notifications';
+
 
 @Component({
   selector: 'app-add-student',
@@ -12,7 +14,7 @@ import { StudentListService } from '../student-list-service.service';
 export class AddStudentComponent implements OnInit {
 
   angForm: FormGroup;
-  constructor(public dobpipe: DatePipe,private fb:FormBuilder,private router : Router,private mockService : StudentListService) {
+  constructor(public dobpipe: DatePipe,private fb:FormBuilder,private router : Router,private mockService : StudentListService,public toastr: ToastrManager) {
     this.createForm();
    }
 
@@ -40,7 +42,7 @@ export class AddStudentComponent implements OnInit {
       ])]
     });
   }
-  string
+
   isdobValid(control : AbstractControl)
   {
       const dobControl= this.angForm.get('dob');
@@ -53,21 +55,23 @@ export class AddStudentComponent implements OnInit {
    
 
        this.mockService.add(sname,smobile,this.dobpipe.transform(sdob, 'dd-MM-yyyy'),scity);
-       this.router.navigate(['/','list']);
-    
+        this.angForm.reset();
+        this.toastr.successToastr('One student added successfully.', 'Success!',{toastTimeout : 3000});
+
 
   }
 
   cancel()
   {
     console.log("cancel");
-    this.router.navigate(["/studentlist"]);
+    // this.router.navigate(["/studentlist"]);
+    this.angForm.reset();
   }
 
   onSubmit(studentform): void { 
     
 //    this.students1.push(studentform.value);
-    this.router.navigate(['../display-students']);
+    // this.router.navigate(['../display-students']);
 
 }
 

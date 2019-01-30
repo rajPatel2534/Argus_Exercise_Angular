@@ -7,6 +7,8 @@ import { Student } from 'src/app/student';
 import { FormGroup, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {  FormBuilder} from '@angular/forms';
+import { ToastrManager } from 'ng6-toastr-notifications';
+
 
 @Component({
   selector: 'app-temp2',
@@ -35,7 +37,7 @@ export class StudentListComponent implements OnInit {
    }
    p: number = 1;
 
-constructor(public datepipe: DatePipe,private fb : FormBuilder,private listService : StudentListService) { 
+constructor(public datepipe: DatePipe,private fb : FormBuilder,private listService : StudentListService, private toastr: ToastrManager) { 
   
 }
 
@@ -86,8 +88,11 @@ setDeleteIndex(ind : number,name : string)
 delete(ind : number)
 {
   if(this.selectedKey>0){
-    this.listService
-.delete(this.selectedKey);
+    const isDeleted : boolean =this.listService.delete(this.selectedKey);
+    if(isDeleted)
+    {
+      this.toastr.successToastr(`${this.selectDeleteName} deleted successfully.`, 'Success!',{toastTimeout : 3000});
+    }
     this.selectedKey=null;
   }
   
@@ -127,6 +132,8 @@ save(key : number)
   if(index >= 0)
   {
     this.listService.update(this.upForm.get('name').value,this.upForm.get('mobile').value,this.datepipe.transform(this.upForm.get('dob').value, 'dd-MM-yyyy'),this.upForm.get('city').value,index);
+    this.toastr.successToastr('Successfully updated.', 'Success!',{toastTimeout : 3000});
+
   }
 }
 
