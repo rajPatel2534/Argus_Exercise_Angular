@@ -23,7 +23,7 @@
             </button>
             <div class="dropdown-menu">
               <h5 class="dropdown-header">Select state</h5>
-              <a *ngFor="let state of selectedListOfStates; let i = index" class="dropdown-item"  (click)="selectState(i,state.name)" >{{state.name}}</a>
+              <a *ngFor="let state of selectedListOfStates; let i = index" data-target="#demo" [attr.data-slide-to] ="i"  class="dropdown-item"  (click)="selectState(i,state.name)" >{{state.name}}</a>
 
             </div>
           </div>
@@ -43,7 +43,7 @@
 
   <!-- The slideshow -->
   <div class="carousel-inner">
-    <div *ngFor="let state of selectedListOfStates; let i = index;" [ngClass]="i == 0 ? 'carousel-item active' : 'carousel-item'" >
+    <div *ngFor="let state of selectedListOfStates; let i = index;" [ngClass]="i === 0 ? 'carousel-item active' : 'carousel-item'" >
       <img src={{state.image}} alt="/assets/img/logo.png">
       <div class="carousel-caption">
         <h3>{{state.name}}</h3>

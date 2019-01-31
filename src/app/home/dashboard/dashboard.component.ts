@@ -31,14 +31,13 @@ export class DashboardComponent implements OnInit {
                   {c_id : 'US' , name : 'Oval', image : 'assets/img/oval.jpg'}
   
   ];
-
-  selectedCountry = "Select Country";
-  selectedState = "Select State";
-
   selectedListOfStates = [{c_id : 'IN' , name : 'Gujarat' , image : 'assets/img/gujarat.jpg'},
   {c_id : 'IN' ,  name : 'Rajasthan', image : 'assets/img/rajasthan.jpg'},
-  {c_id : 'AU' , name : 'Sydney', image : 'assets/img/sydney.jpg'}
  ];
+  selectedCountry = this.listOfCountry[0].name;
+  selectedState = this.selectedListOfStates[0].name;
+
+
   selectedIndex = 0;
   err : boolean =false;
   constructor()
@@ -81,12 +80,17 @@ export class DashboardComponent implements OnInit {
   selectState(index : number , name : string)
   {
     this.selectedState = name;
+    // this.selectedIndex = index;
+    // console.log(this.selectedIndex);
+    
   }
 
   setIndex(index : number)
   {
     console.log(index);
     this.selectedIndex = index;
+    this.selectedState = this.selectedListOfStates[this.selectedIndex].name;
+    
   }
   slide(index : number):number
   {
@@ -106,6 +110,8 @@ export class DashboardComponent implements OnInit {
     {
       this.selectedIndex = this.selectedIndex-1;
     }
+    this.selectedState = this.selectedListOfStates[this.selectedIndex].name;
+    
     console.log("prev-index="+this.selectedIndex);
   
   }
@@ -122,7 +128,8 @@ export class DashboardComponent implements OnInit {
     {
       this.selectedIndex = this.selectedIndex +1;
     }
-
+    this.selectedState = this.selectedListOfStates[this.selectedIndex].name;
+    
     console.log("prev-index="+this.selectedIndex);
   
   }
