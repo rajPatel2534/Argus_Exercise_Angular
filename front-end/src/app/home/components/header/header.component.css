@@ -1,0 +1,45 @@
+.headerBar
+{
+    width: 100%;
+    max-height: 200px;
+    min-height: 50px;
+    text-align: right;
+    background-color: rgb(25, 118, 210);
+    right: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 0px;
+    box-shadow: 0px 2px 13px 0px #2a2929;
+}
+.logoAndTable
+{
+    float: left;
+}
+.fa-user
+{
+    color:white;
+}
+h2{
+    margin-top: 5px;
+    color:white;
+    font-weight: bold;
+    float: left;
+}
+.rightContent
+{
+        margin-right: 20px;
+        position: absolute;
+        right: 0;
+        outline: none;
+    }
+button{
+    margin-left: 20px;
+    font-family: cursive;
+    font-weight: bold;
+}
+i{
+    cursor: pointer;
+   
+}

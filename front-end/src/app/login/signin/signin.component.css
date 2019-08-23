@@ -1,0 +1,161 @@
+.containner{
+    width: 100%;
+    
+    background-color: rgba(215, 215, 227, 0.35);
+
+    position: relative;
+    left: 0;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    color: #0d1577;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+    display: flex;
+   height: 100%;
+   padding-top:10px; 
+   justify-content: center;
+   padding:20px;
+
+
+}
+
+
+h1
+{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    background-color: #004085;
+    border-radius: 8px 8px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+
+
+
+ }
+
+ .btn-success{
+    box-shadow: 2px 2px 9px rgb(150, 143, 143);
+    font-weight: 800;
+ }
+
+ .btn-success:disabled{
+    color: #fff;
+    box-shadow: 2px 2px 7px rgb(156, 156, 156);
+    background-color: #15ac01;
+    border-color: #15ac01;
+ }
+ select, input{
+    max-width:100%;
+    width: 100%;
+    box-sizing:border-box;
+    
+  }
+.cont
+{
+
+    background-color: rgba(238, 238, 246, 0.91);
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+    display: block;
+
+    border-radius: 8px;
+    
+    box-shadow: 6px 6px 17px 3px #746d6d;
+    padding-bottom:30px; 
+    margin-top: auto;
+    margin-bottom: auto;
+
+    width: 40%;
+    text-align: center;
+
+}
+
+.formContainer
+{
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+
+.alert-danger
+{
+    font-size: 15px;
+    padding: 5px;
+    color: #ff0000;
+    background-color: inherit;
+    border: inherit;   
+     font-family: monospace;
+    font-weight: bold;
+}
+
+.input-group-prepend
+{
+    padding: 0px;
+    font-size: 10px;
+    margin-top: -10px;
+
+    height: 38px;
+
+    margin-right: -10px;
+    width:140px;
+     display: inline-block;
+}
+
+.input-group-text
+{
+    padding: 2px;
+    font-size: 20px;
+    display: block;
+    height: 38px;
+    margin: 10px;
+    width:120px;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+#basic-addon1
+{
+
+    text-align: center;
+    
+    color: #023a56b0;
+} 
+
+.inerr
+{
+
+display: inline-block;
+flex-grow: 1;
+}
+.err{
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-top: -10px;
+    float: left;
+    display: block;
+    padding: 0px;
+}
+
+input{
+    margin-bottom: -10px;
+}
+.contain{
+    display: flex;
+}

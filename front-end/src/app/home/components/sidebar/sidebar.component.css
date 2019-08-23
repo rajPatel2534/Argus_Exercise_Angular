@@ -1,0 +1,37 @@
+
+
+:host >>> .ng-sidebar
+{
+right:0;
+
+}
+.list-group{
+    width: 100%;
+}
+li{
+    font-family: cursive;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgb(25, 118, 210);
+
+}
+ng-sidebar-container
+{
+    background-color: #e0eaea;
+    max-width: 200px;
+    overflow-x: scroll;
+    overflow: auto;
+    padding: 0;
+    display: block;
+    box-shadow: 2px 5px 9px 0px #807b7b;
+}
+p {
+    display: block;
+
+    text-align: center;
+    margin-top: 10px;
+    font-family: cursive;
+    font-weight: bolder;
+}
+
+  
