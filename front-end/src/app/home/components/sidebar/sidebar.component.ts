@@ -13,7 +13,11 @@ export class SidebarComponent implements OnInit {
    private _opened: boolean = true;
    selectedIndex : number = 0;
 
-   private sideBarItems : string[] = ['Home','Student List','Add Student'];
+   private sideBarItems : any[] = [
+     {name: 'Home' , link : '/dashboard'},
+     {name : 'Student List' , link : '/studentlist'},
+     {name : 'Add Student' , link : '/addstudent'},
+     {name : 'High Chart' , link : '/high-chart'}];
 
   //  togg() {
   //    console.log("Clicked");
@@ -24,13 +28,18 @@ export class SidebarComponent implements OnInit {
   
   ngOnInit() {
        let activatedRoute= this.router.url;
-      if(activatedRoute === "/studentlist"){
-         this.selectedIndex = 1;  
-      }
-      else if(activatedRoute === "/addstudent")
-      {
-        this.selectedIndex =2;
-      }
+       const index = this.sideBarItems.findIndex(item => item.link === activatedRoute);
+        if(index != -1) this.selectedIndex = index;
+      // if(activatedRoute === "/studentlist"){
+      //    this.selectedIndex = 1;  
+      // }
+      // else if(activatedRoute === "/addstudent")
+      // {
+      //   this.selectedIndex =2;
+      // }
+      // else if(activatedRoute === '/high-chart'){
+      //   this.selectedIndex = 3;
+      // }
       
       
     }
@@ -40,7 +49,7 @@ export class SidebarComponent implements OnInit {
   {
     console.log(index);
       this.selectedIndex = index;
-      let temproute = this.selectedIndex == 1?'/studentlist': this.selectedIndex ==2? '/addstudent' : '/dashboard';
-      this.router.navigate([temproute])
+      // let temproute = this.selectedIndex == 1?'/studentlist': this.selectedIndex ==2? '/addstudent' : this.selectedIndex == 3 ? '/high-chart' : '/dashboard';
+      this.router.navigate([`${this.sideBarItems[index].link}`])
   }
 }

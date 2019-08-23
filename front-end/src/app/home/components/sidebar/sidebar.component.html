@@ -5,7 +5,7 @@
     
     <ul class="list-group">
         <li *ngFor="let listItem of sideBarItems; let i = index" class="list-group-item " [class.active]="selectedIndex === i" 
-        (click)="setIndex(i)"  >{{listItem}}</li>
+        (click)="setIndex(i)"  >{{listItem.name}}</li>
       </ul>
     </ng-sidebar>
 

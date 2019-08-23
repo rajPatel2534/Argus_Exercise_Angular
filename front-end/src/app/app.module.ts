@@ -29,7 +29,8 @@ import {FilterPipeName} from './pipes/searchName.pipe';
 import {FilterPipeMobile} from './pipes/searchMobile.pipe';
 import {FilterPipeCity} from './pipes/searchCity.pipe';
 import {FilterPipeDOB} from './pipes/searchDOB.pipe';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HighChartComponent } from './home/components/high-chart/high-chart.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {HttpClientModule} from '@angular/common/http'
     FilterPipeName,
     FilterPipeMobile,
     FilterPipeCity,
-    FilterPipeDOB
+    FilterPipeDOB,
+    HighChartComponent
   ],
   imports: [NgbModule,
     BrowserModule,

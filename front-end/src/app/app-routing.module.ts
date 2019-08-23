@@ -9,6 +9,7 @@ import { DashboardComponent } from './home/components/dashboard/dashboard.compon
 import { StudentListComponent } from './home/components/studentList/studentList.component';
 import { AddStudentComponent } from './home/components/add-student/add-student.component';
 import { MyAccountComponent } from './home/components/my-account/my-account.component';
+import { HighChartComponent } from './home/components/high-chart/high-chart.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
     {
       path:'myaccount',
       component:MyAccountComponent
+    },
+    {
+      path:'high-chart',
+      component : HighChartComponent
     }
   ]}
   
